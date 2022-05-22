@@ -10,16 +10,13 @@ import java.util.List;
 
 
 public class MyFileVisitor extends SimpleFileVisitor<Path> {
-
     private List<Path> list = new ArrayList<>();
-
 
     private void check(Path p){
         if(p.toFile().isFile() && (p.getFileName().toString().endsWith(".txt") ||  p.getFileName().toString().endsWith(".TXT"))){
             list.add(p);
         }
     }
-
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
         check(file);

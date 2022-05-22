@@ -26,12 +26,10 @@ public class WorkWithFileImpl {
         copy(paths, Path.of(to));
     }
 
-
     public static List<Path> sort(List<Path> list) {
         list.sort(Comparator.comparing(o -> o.getFileName().toString()));
         return list;
     }
-
 
     public static void copy(List<Path> paths, Path to) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(to.toFile(), true))) {
@@ -59,7 +57,6 @@ public class WorkWithFileImpl {
     }
     // вытаскивает все зависимости из файла
 
-
     public static Map<String,Path> fileWithDependencies(List<Path> list) {
         List<Path> listSorted = sort(list);
         Map<String, Path> result = new LinkedHashMap<>();
@@ -79,7 +76,6 @@ public class WorkWithFileImpl {
         return result;
     }
     // сопоставляю файл в котором есть зависимость и саму зависимость
-
 
     public static List<Path> sortWithDependencies(List<Path> list) {
         List<Path> resultList = sort(list);
@@ -101,7 +97,6 @@ public class WorkWithFileImpl {
         return resultList;
     }
     // сортировка (если зависимый файл выше ,то его нужно поменять местами)
-
     private static void swap(int one, int two, List<Path> list) {
         Path temp = list.get(one);
         list.set(one, list.get(two));
