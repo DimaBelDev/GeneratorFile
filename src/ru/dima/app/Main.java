@@ -1,9 +1,11 @@
 package ru.dima.app;
 
-public class Main {
-    public static void main(String[] args) {
+import java.io.IOException;
 
-        WorkWithFileImpl.work("C:\\Users\\Anonymous\\Desktop\\Folder", "C:\\Users\\Anonymous\\Desktop\\result1.txt");
+public class Main {
+    public static void main(String[] args) throws IOException {
+
+        WorkWithFileImpl.work("C:\\Users\\Anonymous\\Desktop\\Pack", "C:\\Users\\Anonymous\\Desktop\\result.txt");
 
 
 
